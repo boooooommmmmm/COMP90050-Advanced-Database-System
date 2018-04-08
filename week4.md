@@ -72,7 +72,22 @@ System look prefect
 
 * Have enough resources
 * Do not let a process simply rollback. -> makes live looks worse than deadlocks. -> everything seems working.
-* ​
+* Resource level: Linearly order the resources and request of resources should follow order. J > I 
+* Pre-declare all resources in a single request
+* wait and rollback
+* Check resource dependency graph for cycles.
+* Use time out for global deadlock
+* Phantom Deadlock
+
+**Calculate the probability of a deadlock**
+
+![](pic/week5_1.png)
+
+![](pic/week5_2.png)
+
+
+
+
 
 
 

@@ -2,7 +2,9 @@
 
 ### Isolation
 
-achieve isolation by sequentially 
+Guarantees consistency
+
+achieve isolation by sequentially (sometime sequentially much faster than parallel -> no need for locks) 
 
 
 
