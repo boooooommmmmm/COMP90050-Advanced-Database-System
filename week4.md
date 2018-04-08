@@ -64,6 +64,16 @@ Not suitable for single CPU system.
 
 ### Dead lock
 
+Each one waiting for others. 
+
+System look prefect
+
+**Solution**
+
+* Have enough resources
+* Do not let a process simply rollback. -> makes live looks worse than deadlocks. -> everything seems working.
+* ​
+
 
 
 <br />
