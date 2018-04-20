@@ -44,17 +44,31 @@ IS, IX, S, SIX, X
 
 ### Convoy
 
+Long chain of waiting things.
+
 FIFO can cause the problem of long queues. 
+
+High priority transaction will wait pervious low priority transaction. 
 
 
 
 ### Optimistic Locking
 
+Only need to take the lock when need it.
 
+Lock as short as possible -> minimum locking
+
+before commit (processing data), check value (version) at first
 
 ### Crabbing
 
+Link list
 
+Tree search
 
+Steps:
 
+Take the Xlock for entire list, do operation and release the list.
+
+Start from lock from the head, then lock next lock, unlock pervious lock. Repeat until the required node been found.
 
