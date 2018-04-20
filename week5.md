@@ -14,7 +14,7 @@ achieve isolation by sequentially (sometime sequentially much faster than parall
 
 ##### Share lock
 
-For read, cannot write.
+For read, cannot write. Also called read lock. If one source is locked by share lock, other transaction and only add share lock to it. The share lock can generate the value is not be modified.
 
 <br />
 

@@ -29,3 +29,32 @@ Read and write sets can be defined by predicates (e.g. Where clauses in SQL stat
 ### Granularity Locks  粒度锁
 
 #### Intention Lock  意向锁
+
+IS, IX, S, SIX, X
+
+![](pic/week7_1.png)
+
+
+
+![](pic/week7_2.png)
+
+<br />
+
+
+
+### Convoy
+
+FIFO can cause the problem of long queues. 
+
+
+
+### Optimistic Locking
+
+
+
+### Crabbing
+
+
+
+
+
