@@ -51,29 +51,25 @@ Before a page is written, make sure pageLSN is <= flushedLSN
 
 
 
+#### Transaction table
+
+One entry per active Xact
+
+Contains XID, status, lastLSN
+
+#### Dirty Page Table
+
+Tells which pages need to be flushed, which do not 
+
+One entry per dirty page in buffer pool
+
+Contains recLSN
 
 
 
+### Checkpointing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+minimize the time of recovery.
 
 ---
 
