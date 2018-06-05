@@ -84,6 +84,42 @@ EA = H*C+(1-H)*S
 $$
 where H = hit ratio, C = buffer access time;  S = disk access time
 
+
+
+## RAID
+
+### RAID 0 (Block level Striping)
+
+* Balanced i/o of disk drives
+* MMTF/2
+
+### RAID 1 (Mirroring)
+
+* independency
+* \*2 read, /2 write
+* MMTF^2
+
+### RAID 2 (bit level striping)
+
+* contiguous bits of data of file
+* striping takes place at bit level
+* double transfer rate
+* MMTF/2
+
+### RAID 3 (Byte level striping)
+
+* striping takes place at bytes level
+* MMTF^2/3
+
+### RAID 4 (Block level striping)
+
+* striping takes place at block level
+* MMTF^2/3
+
+### RAID 5 ()
+
+
+
 ---
 
 END
