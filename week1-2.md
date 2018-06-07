@@ -151,6 +151,11 @@ Transaction processing provides the following:
 
 
 
+There are two types of message passing:
+
+* session based - usually efficient and reliable for an interaction that requires several message transfers. Package comes sequence.
+* datagrams - efficient for single message transfers. Only one package, just send it and do not care the receiver receive it or not.
+
 ---
 
 END
