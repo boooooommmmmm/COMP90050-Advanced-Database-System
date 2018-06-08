@@ -58,18 +58,28 @@ The reminder will tell which bit goes wrong
 
 ## Transaction models
 
+Foreign key: this attribute is a key for another table.
+
 ### Flat
 
 Can be a very long running transaction. Any failure of transaction requires lot of unnecessary.
 
+Do everything or not at all (if meet requirement, commit, otherwise, roll back)
 
+(先做了再说)
+
+limitation: not convenient; not good for large scale
+
+<br />
 
 ### Nested
 
+divide transaction into hierarchic
+
 Commit rule: 
 
-* A subtransaction can either commit or abort,however, commit cannot take place unless the parent itself commits.
-* Subtransactions have  A, C, and I properties but not have Dproperty unless all its ancestors commit.
+* A subtransaction can either commit or abort, however, commit cannot take place unless the parent (and patent's parents) itself commits.
+* Subtransactions have  A, C, and I properties but **not have D** property unless all its ancestors commit.
 * Commit of a sub transaction makes its results available only to its parents.
 
 Roll back Rules
@@ -78,13 +88,27 @@ Roll back Rules
 
 Visibility Rules
 
-* Changes made by a sub transaction are visible to the parent only when the sub transaction commits. Whereas all objects of parent are visible to its children. Implication of this is that the parent should not modify objects while children are accessing  them. This is not a problem as parent is not run in parallel with its children.
+* Changes made by a sub transaction are visible to the parent only when the sub transaction commits. Whereas all objects of **parent are visible to its children**. Implication of this is that the parent should not modify objects while children are accessing  them. This is not a problem as parent is not run in parallel with its children.
 
 <br />
 
+### TP monitor
+
+Batch Processing
+
+Time-sharing
+
+Real-Time processing
+
+Client-Server Processing 
+
+Presentation service : defines interface between the application and the devices it has to interact to.  
+
+Queue management
+
 <br />
 
-### Dekker's algorithm 
+### Dekker's algorithm
 
 C1，C2，turn
 
@@ -106,15 +130,17 @@ Each one waiting for others.
 
 System look prefect
 
+have loop(s)
+
 **Solution**
 
 * Have enough resources
 * Do not let a process simply rollback. -> makes live looks worse than deadlocks. -> everything seems working.
 * Resource level: Linearly order the resources and request of resources should follow order. J > I 
-* Pre-declare all resources in a single request
+* Pre-declare all resources in a single request -> only request once;
 * wait and rollback
-* Check resource dependency graph for cycles.
-* Use time out for global deadlock
+* Check resource dependency graph for cycles. ->  no hierarchies -> kill cycles (transactions)
+* Use time out for global deadlock (for distribute database systems)
 * Phantom Deadlock
 
 **Calculate the probability of a deadlock**
