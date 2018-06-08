@@ -14,7 +14,45 @@
 
 <br />
 
+### Atomic Disk Writes
+
+entire block is written correctly on disk or the content of the block is unchanged. 
+
+<br />
+
+### Logged write:
+
+similar to the duplex write
+
+<br />
+
+<br />
+
 ### CRC: Cyclic Redundancy Check
+
+<br />
+
+Good to check changes
+
+do XOR
+
+Shifting by bit
+
+get reminder
+
+The reminder is called CRC
+
+Then do it again
+
+if everything is correct
+
+you will get a 0 reminder
+
+The reminder will tell which bit goes wrong
+
+<br />reliable
+
+<br />
 
 <br />
 
