@@ -89,8 +89,6 @@ Only apply phase 1 and phase 2 for XLCOKs.
 
 SLOCKs release immediately. XLOCKs no need to wait for a long time.
 
-
-
 <br />
 
 **Degree1**:

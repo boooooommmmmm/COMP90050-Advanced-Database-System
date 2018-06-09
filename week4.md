@@ -116,7 +116,9 @@ C1，C2，turn
 
 ### Spinlock 自旋锁
 
-Lock two CPU cycle, one for reading, one for writing. Reading and writing cannot be interpreted. Use busy waiting.
+Atomic
+
+Lock two CPU cycle, one for reading, one for writing. **Reading and writing cannot be interpreted**. Use busy waiting.
 
 a **spinlock** is a lock which causes a thread trying to acquire it to simply wait in a loop ("spin") while repeatedly checking if the lock is available
 
