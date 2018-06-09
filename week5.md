@@ -2,9 +2,11 @@
 
 ### Isolation
 
-Guarantees consistency
+**Guarantees consistency** ->  Isolation guarantees consistency provided each transaction itself is consistent
 
-achieve isolation by sequentially (sometime sequentially much faster than parallel -> no need for locks) 
+<br />
+
+**Achieve isolation by sequentially** (sometime sequentially much faster than parallel -> no need for locks) 
 
 <br />
 
@@ -12,27 +14,11 @@ achieve isolation by sequentially (sometime sequentially much faster than parall
 
 <br />
 
-##### Share lock
 
-For read, cannot write. Also called read lock. If one source is locked by share lock, other transaction and only add share lock to it. The share lock can generate the value is not be modified.
-
-<br />
-
-##### Exclusive lock
-
-For read&write
 
 ---
 
 
-
-<br />
-
-**Well-formed transactions**: A transaction is well formed if all READ, WRITE and UNLOCK
-operations are covered earlier by appropriate LOCK operations
-
-**Two phase transactions**: A transaction is two phased if all LOCK operations precede
-all its UNLOCK operations. (if you lock then unlock, you cannot lock again)
 
 <br />
 
@@ -57,7 +43,29 @@ In a history sequence H, consisting of tuples of the form (T, action, object).  
 
 <br />
 
-wormhole
+##### Share lock
+
+For read, cannot write. Also called read lock. If one source is locked by share lock, other transaction and only add share lock to it. The share lock can generate the value is not be modified.
+
+<br />
+
+##### Exclusive lock
+
+For read&write
+
+<br />
+
+<br />
+
+**Well-formed transactions**: A transaction is well formed if all READ, WRITE and UNLOCK
+operations are covered earlier by appropriate LOCK operations
+
+**Two phase transactions**: A transaction is two phased if all LOCK operations precede
+all its UNLOCK operations. (if you lock then unlock, you cannot lock again)
+
+**wormhole**: a history is isolated if and only if it has no wormholes.
+
+**Rollback theorem**: an update transaction that does an UNLOCK and then does a ROLLBACK is not two phases.
 
 <br />
 
@@ -65,27 +73,37 @@ wormhole
 
 the more locks you take, the performance is poorer
 
-Degree3:
+**Degree3**:
 
-Perfect transaction model. Best isolation, true isolation. Two phase lock -> lock anything which you want to access, then do read and write.
+Perfect transaction model. Best isolation, true isolation. 
 
-<br />
-
-Degree2:
-
-no lost updates and no dirty reads. Response time lower than degree 3.
+Two phase lock -> lock anything which you want to access, then do read and write.
 
 <br />
 
-Degree1:
+**Degree2**:
+
+no lost updates and no dirty reads. Response time lower than degree 3. Run much more parallel than degree 3
+
+Only apply phase 1 and phase 2 for XLCOKs.
+
+SLOCKs release immediately. XLOCKs no need to wait for a long time.
 
 
 
 <br />
 
-Degree0:
+**Degree1**:
 
-No two phase, lock then immediately release. High response.
+No SLOCK for reading. Reading no need for waiting.
+
+<br />
+
+**Degree0**:
+
+No two phase, no lock for reading
+
+When writes, lock then and immediately release. High response.
 
 Ignores all conflicts.
 
@@ -100,3 +118,7 @@ Ignores all conflicts.
 <br />
 
 <br />
+
+---
+
+END
