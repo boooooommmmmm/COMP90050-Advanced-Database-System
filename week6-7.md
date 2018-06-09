@@ -28,9 +28,23 @@ Read and write sets can be defined by predicates (e.g. Where clauses in SQL stat
 
 ### Granularity Locks  粒度锁
 
+* Pick a fixed set of predicates.
+* They form a lattice or a tree.
+* Lock the nodes in this graph/lattice/tree 
+
+<br />
+
+<br />
+
 #### Intention Lock  意向锁
 
-IS, IX, S, SIX, X
+IS, IX, U, S, SIX, X;
+
+IS: intend to set shared locks;
+
+U: Intention to update in the future  
+
+SIX: take shared lock at moment, has intention to take excusive lock
 
 ![](pic/week7_1.png)
 
@@ -50,11 +64,13 @@ FIFO can cause the problem of long queues.
 
 High priority transaction will wait pervious low priority transaction. 
 
+(Do not use FIFO)
+
 
 
 ### Optimistic Locking
 
-Only need to take the lock when need it.
+Don't take lock when read it, -> Only need to take locks when necessary. (commit)
 
 Lock as short as possible -> minimum locking
 
