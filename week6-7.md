@@ -76,6 +76,16 @@ Lock as short as possible -> minimum locking
 
 before commit (processing data), check value (version) at first
 
+<br />
+
+### Snapshot Isolation
+
+Snapshot Isolation method is used in Oracle but it will not guarantee Serializability.  However, its transaction throughput is very high compared to two phase locking scheme. 
+
+First one can commit.
+
+<br />
+
 ### Crabbing
 
 Link list
