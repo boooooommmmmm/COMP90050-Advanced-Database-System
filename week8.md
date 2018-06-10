@@ -14,34 +14,40 @@ Reduce traffic from slow device to fast device.
 
 Eviction needs to use page, any modified pages should copied to the disk.
 
-**Force** write: the moment write, don't keep it in the buffer catch, immediately write on disk. Therefore, it has poor response time and provides durability
+**Force** write: the moment write, don't keep it in the buffer cache, immediately write on disk. Therefore, it has poor response time and provides durability
 
 **No Force**: make all modification in the memory. 
 
-**Steal**: Need to create an empty space. Steal memory space for old page and give it to new page. Can have more throughout, but hard to atomicity.
+Therefore, good response time, durability is a problem -> system crash 
 
+=> write as little as possible, in a convenient place, at commit time
 
+**Steal**: Need to create an empty space. Steal memory space for old page and give it to new page. 
 
+Can have more throughout, but hard to atomicity.
 
+<br /><br />
 
 ## Log
 
 Record REDO and UNDO information for every time update.
 
-### **Write-Ahead Logging** protocol.
+An ordered list of REDO/UNDO actions
 
-* Force the log record for new values for an update before data page gets to disk(steal); 
+### **Write-Ahead Logging** protocol (WAL)
+
+* **Force the log record** for new values for an update before data page gets to disk(stolen); 
 
 
 * Must write all log records to disk (force) for a Xact before commit.
-* Guarantee Atomicity
-* Guarantee Durability -> no update lost
+* Guarantee **Atomicity**
+* Guarantee **Durability** -> no update lost
 
 ARIES algorithm is how log works
 
 
 
-Each log records had a unique Log Sequence Number (LSN)
+Each log records had a unique **Log Sequence Number** (LSN)
 
 Each data page contains pageLSN
 
