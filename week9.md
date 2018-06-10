@@ -24,6 +24,8 @@ What happens if system crashes during analysis? -> redo analysis
 
 
 
+Atomicity & Durability
+
 ### Distribute recovery
 
 [see next note](week10.md)

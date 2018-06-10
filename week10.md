@@ -6,9 +6,9 @@ ARIES can be done locally, and globally apply two phase locking.
 
 Master node
 
+Two phase protocol 
 
-
-Ensure that all sub-transactions of distributed transaction  must commit or none must commit.
+Ensure that all sub-transactions of distributed transaction must commit or none must commit. (All or none)
 
 
 
