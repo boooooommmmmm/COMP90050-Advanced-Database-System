@@ -6,11 +6,11 @@
 
 **Atomicity**: all or nothing. When apply for transaction, all of them are done or not at all. 
 
-**Consistency**: the most difficult; If transaction is parallel, Preserving an Invariant
+**Consistency**: the most difficult; If transaction is parallel, Preserving an Invariant. Any data written to the database must be **valid** according to all defined rules.
 
 **Isolation**: every transactions have to wait until last transaction finish modifying. ->locking protocol -> sequential 
 
-**Durability**: either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially.
+**Durability**: either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially. The durability property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors. 
 
 <br />
 

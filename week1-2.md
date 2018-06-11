@@ -64,7 +64,7 @@ Cloud computing
 
 Effective  memory access time:
 
-Hit ratio = references in cache / total references
+**Hit ratio** = references in cache / total references
 $$
 EA = H*C + (1-H)*S
 $$
@@ -155,6 +155,12 @@ There are two types of message passing:
 
 * session based - usually efficient and reliable for an interaction that requires several message transfers. Package comes sequence.
 * datagrams - efficient for single message transfers. Only one package, just send it and do not care the receiver receive it or not.
+
+
+
+<br />
+
+<br />
 
 ---
 
