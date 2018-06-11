@@ -2,9 +2,7 @@
 
 ### Isolation
 
-**Guarantees consistency** ->  Isolation guarantees consistency provided each transaction itself is consistent
-
-<br />
+**Guarantees consistency** ->  Isolation guarantees consistency provided each transaction itself is consistent.
 
 **Achieve isolation by sequentially** (sometime sequentially much faster than parallel -> no need for locks) 
 
@@ -26,9 +24,7 @@ These two rules can guarantee isolation.
 
 <br />
 
----
-
-### Dependency property
+## Dependency property
 
 In a history sequence H, consisting of tuples of the form (T, action, object).  e.g. 	(T1,a1,O)
 
@@ -45,23 +41,21 @@ In a history sequence H, consisting of tuples of the form (T, action, object).  
 
 ##### Share lock
 
-For read, cannot write. Also called read lock. If one source is locked by share lock, other transaction and only add share lock to it. The share lock can generate the value is not be modified.
+For read, cannot write. Also called read lock. If one source is locked by share lock, other transaction only can add share lock to it. The share lock can generate the value is not be modified.
 
 <br />
 
 ##### Exclusive lock
 
-For read&write
+For read&write. 
+
+If one source is locked by exclusive lock, other transaction cannot add any lock on it. 
 
 <br />
 
-<br />
+**Well-formed transactions**: A transaction is well formed if all READ, WRITE and UNLOCK operations are covered earlier by appropriate LOCK operations. 
 
-**Well-formed transactions**: A transaction is well formed if all READ, WRITE and UNLOCK
-operations are covered earlier by appropriate LOCK operations
-
-**Two phase transactions**: A transaction is two phased if all LOCK operations precede
-all its UNLOCK operations. (if you lock then unlock, you cannot lock again)
+**Two phase transactions**: A transaction is two phased if all LOCK operations precede all its UNLOCK operations. (if you lock then unlock, you cannot lock again)
 
 **wormhole**: a history is isolated if and only if it has no wormholes.
 
@@ -69,9 +63,11 @@ all its UNLOCK operations. (if you lock then unlock, you cannot lock again)
 
 <br />
 
-##### Degree of isolation
+<br />
 
-the more locks you take, the performance is poorer
+### Degree of isolation
+
+The more locks you take, the poorer performance you have. 
 
 **Degree3**:
 

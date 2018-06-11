@@ -10,7 +10,9 @@
 
 **Isolation**: every transactions have to wait until last transaction finish modifying. ->locking protocol -> sequential 
 
-**Durability**: either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially. The durability property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors. 
+**Durability**: the system should tolerate system failures and any committed updates should not be lost. either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially. (Atomic disk write)
+
+The durability property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors. 
 
 <br />
 
@@ -62,13 +64,25 @@ Foreign key: this attribute is a key for another table.
 
 ### Flat
 
+Do everything or not at all. 
+
 Can be a very long running transaction. Any failure of transaction requires lot of unnecessary.
 
 Do everything or not at all (if meet requirement, commit, otherwise, roll back)
 
 (先做了再说)
 
-limitation: not convenient; not good for large scale
+**Good**: ACID; easy to implement; simple; 
+
+**limitation**: not convenient; not good for large scale; may keep rollback; 
+
+<br />
+
+### Flat with save points
+
+Has lots of save points
+
+Can rollback to particular point.
 
 <br />
 
@@ -89,6 +103,12 @@ Roll back Rules
 Visibility Rules
 
 * Changes made by a sub transaction are visible to the parent only when the sub transaction commits. Whereas all objects of **parent are visible to its children**. Implication of this is that the parent should not modify objects while children are accessing  them. This is not a problem as parent is not run in parallel with its children.
+
+<br />
+
+**Good**: can rollback a specific subtransaction, no need to rollback the whole transaction.  
+
+**limitation**: No D; 
 
 <br />
 
