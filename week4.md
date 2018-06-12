@@ -8,9 +8,13 @@
 
 **Consistency**: the most difficult; If transaction is parallel, Preserving an Invariant. Any data written to the database must be **valid** according to all defined rules.
 
-**Isolation**: every transactions have to wait until last transaction finish modifying. ->locking protocol -> sequential 
+The transaction is a correct transformation of the state. Actions taken as a whole do not violate the integrity of the application state assuming transactions are correct programs.
 
-**Durability**: the system should tolerate system failures and any committed updates should not be lost. either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially. (Atomic disk write)
+**Isolation**: **executed sequentially**. every transactions have to wait until last transaction finish modifying. ->locking protocol -> sequential 
+
+Even when several transactions are executed simultaneously, it appears to each transaction T that others executed either happen before T or after  T but not at the same time.
+
+**Durability**: the system should **tolerate system failures** and any committed updates should not be lost. either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially. (Atomic disk write)
 
 The durability property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors. 
 
@@ -72,7 +76,7 @@ Do everything or not at all (if meet requirement, commit, otherwise, roll back)
 
 (先做了再说)
 
-**Good**: ACID; easy to implement; simple; 
+**Good**: ACID; easy to implement; simple; no need hardware support
 
 **limitation**: not convenient; not good for large scale; may keep rollback; 
 

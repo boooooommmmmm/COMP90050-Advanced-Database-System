@@ -133,7 +133,7 @@ where H = hit ratio, C = buffer access time;  S = disk access time
 # ACID 
 
 * Atomicity: A transaction’s changes to the state (Database) are atomic implying either all actions happen or none happen. All or nothing
-* Consistency: A the transaction is a correct transformation of the state. Actions taken as a whole do not violate the integrity of the application state assuming transactions are correct programs.
+* Consistency: The transaction is a correct transformation of the state. Actions taken as a whole do not violate the integrity of the application state assuming transactions are correct programs.
 * Isolation: Even when several transactions are executed simultaneously, it appears to each transaction T that others executed either happen before T or after  T but not at the same time.
 * Durability: State changes committed by a transaction survive failures.
 

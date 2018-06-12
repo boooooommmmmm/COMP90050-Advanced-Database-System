@@ -30,8 +30,7 @@ In a history sequence H, consisting of tuples of the form (T, action, object).  
 
 <br />
 
-**Lost update**: a transaction write is ignored by another transaction. (WRITE
--> WRITE conflict)
+**Lost update**: a transaction write is ignored by another transaction. (WRITE -> WRITE conflict)
 
 **Dirty read**: a transaction reads an object written by another transaction which again modifies the object afterwards. (WRITE -> READ Conflict)
 
@@ -69,37 +68,42 @@ If one source is locked by exclusive lock, other transaction cannot add any lock
 
 The more locks you take, the poorer performance you have. 
 
-**Degree3**:
+#### Degree3:
 
-Perfect transaction model. Best isolation, true isolation. 
-
-Two phase lock -> lock anything which you want to access, then do read and write.
-
-<br />
-
-**Degree2**:
-
-no lost updates and no dirty reads. Response time lower than degree 3. Run much more parallel than degree 3
-
-Only apply phase 1 and phase 2 for XLCOKs.
-
-SLOCKs release immediately. XLOCKs no need to wait for a long time.
+* Perfect transaction model. Best isolation, true isolation. 
+* Lock protocol is **two phase** and **well formed**.
+* Two phase lock -> lock anything which you want to access, then do read and write.
+* It is sensitive to the following conflicts:
+  * write->write; write ->read; read->write
 
 <br />
 
-**Degree1**:
+#### Degree2:
 
-No SLOCK for reading. Reading no need for waiting.
+* no lost updates and no dirty reads. Response time lower than degree 3. Run much more parallel than degree 3
+* Only apply phase 1 and phase 2 for XLCOKs.
+* SLOCKs release immediately. XLOCKs no need to wait for a long time.
+* Might Non repeatable reads
+* It is sensitive to the following conflicts:
+  * write->write; write ->read
 
 <br />
 
-**Degree0**:
+#### Degree1:
 
-No two phase, no lock for reading
+* No SLOCK for reading. Reading no need for waiting.
+* Two phase for excusive lock
+* It is sensitive the following conflicts:
+  * write->write;
 
-When writes, lock then and immediately release. High response.
+<br />
 
-Ignores all conflicts.
+#### Degree0:
+
+* No two phase, no lock for reading
+* Lock protocol is well-formed
+* When writes, lock then and immediately release. High response.
+* Ignores all conflicts.
 
 <br />
 
