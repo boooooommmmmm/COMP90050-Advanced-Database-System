@@ -32,7 +32,7 @@ Phase 2:
 
 <br />
 
-If we have only received prepare log for T but no commit or abort log record and the site is a subordinate, we must repeatedly contact the coordinator to respond for commit or abort instruction.
+If we have a commit or abort log of T, the status is clear. We redo or undo T as in centralized database systems. The coordinator needs sending messages to its subordinates  abort or commit messages until it receives acknowledgements from them.
 
 If we have only prepare log for T but no commit or abort log record and the site is a subordinate we must repeatedly contact the the coordinator  to respond for commit or abort instruction. After receiving a message the rest of actions are 2PC.
 
