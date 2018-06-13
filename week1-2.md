@@ -110,6 +110,7 @@ where H = hit ratio, C = buffer access time;  S = disk access time
 
 * striping takes place at bytes level
 * MMTF^2/3
+* parity 
 
 ### RAID 4 (Block level striping)
 
