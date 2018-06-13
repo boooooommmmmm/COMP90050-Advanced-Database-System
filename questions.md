@@ -10,3 +10,13 @@
 10. How distributed commit
 11. draw RAID X
 
+
+
+
+
+
+
+
+
+1. disk access time, no formula for SSD
+2. 
