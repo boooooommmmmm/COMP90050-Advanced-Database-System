@@ -117,11 +117,14 @@ where H = hit ratio, C = buffer access time;  S = disk access time
 * striping takes place at block level
 * MMTF^2/3
 * any changes have to modify disk 3
+* Parity
 
 ### RAID 5 (Block level striping)
 
 * Most common technology
 * No dedicated disk for parity blocks, Parity blocks are also striped
+*  bits are distributed among all disks 
+* 5 disk and 3 disk
 
 ### RAID 6
 
