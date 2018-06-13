@@ -70,7 +70,7 @@ High priority transaction will wait pervious low priority transaction.
 
 ### Optimistic Locking
 
-Don't take lock when read it, -> Only need to take locks when necessary. (commit)
+Don't take lock when read it, -> Only need to take locks when necessary (commit).
 
 Lock as short as possible -> minimum locking
 
@@ -80,9 +80,9 @@ before commit (processing data), check value (version) at first
 
 ### Snapshot Isolation
 
-Snapshot Isolation method is used in Oracle but it will not guarantee Serializability.  However, its transaction throughput is very high compared to two phase locking scheme. 
+Snapshot Isolation method is used in Oracle but it will **not guarantee Serializability**.  However, its transaction throughput is very high compared to two phase locking scheme. 
 
-First one can commit.
+First writer can commit.
 
 <br />
 

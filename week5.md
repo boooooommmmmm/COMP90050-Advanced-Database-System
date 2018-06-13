@@ -66,7 +66,7 @@ If one source is locked by exclusive lock, other transaction cannot add any lock
 
 ### Degree of isolation
 
-The more locks you take, the poorer performance you have. 
+The more locks you take, the poorer performance you have.  The degree of isolation is trying to increase parallel isolation and minimise waiting time.
 
 #### Degree3:
 
