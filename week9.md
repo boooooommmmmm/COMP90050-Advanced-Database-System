@@ -48,7 +48,11 @@ Atomicity & Durability
 2. Three phase
    1. Analysis -> scan all logs -> copy two tables from checkpoint || if see one of the log record is "end", remove this Xact from Xact table. || add new Xact to Xact table. || if page is not in the dirty page table, write it in the dirty page table.
    2. REDO -> redo everything from smallest recLSN in dirty page table to crash point
-   3. UNDO ->
+   3. UNDO
+      1. Choose the largest LSN among ToUndo.
+      2. If this LSN is a CLR and undonextLSN==NULL ->Write an End record for this Xact. 
+      3. If this LSN is a CLR, and undonextLSN != NULL ->Add undonextLSN to ToUndo. other CLRs is done.
+      4. Else this LSN is an update.  Undo the update, write a CLR, add prevLSN to ToUndo.
 3. 
 
 ### Distribute recovery

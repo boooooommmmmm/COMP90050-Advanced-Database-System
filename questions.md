@@ -9,14 +9,3 @@
 9. give a case and draw dirty page table and exclusive table and try to recover it
 10. How distributed commit
 11. draw RAID X
-
-
-
-
-
-
-
-
-
-1. disk access time, no formula for SSD
-2. 

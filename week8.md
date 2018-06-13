@@ -49,9 +49,9 @@ ARIES algorithm is how log works
 
 Each log records had a unique **Log Sequence Number** (LSN)
 
-Each data page contains pageLSN
+Each data page contains **pageLSN**
 
-System keeps track of fulshedLSN -> how far is my log is written
+System keeps track of **flushedLSN** -> how far is my log is written
 
 Before a page is written, make sure pageLSN is <= flushedLSN
 
