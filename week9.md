@@ -1,6 +1,6 @@
 # Week 9
 
-The Recovery Manager guarantees Atomicity & Durability. 
+> The Recovery Manager guarantees Atomicity & Durability. 
 
 <br />
 
@@ -41,6 +41,15 @@ Atomicity & Durability
 * Write "end" log at the end of UNDO
 
 
+
+### Recovery
+
+1. Find checkpoint in the master record.
+2. Three phase
+   1. Analysis -> scan all logs -> copy two tables from checkpoint || if see one of the log record is "end", remove this Xact from Xact table. || add new Xact to Xact table. || if page is not in the dirty page table, write it in the dirty page table.
+   2. REDO -> redo everything from smallest recLSN in dirty page table to crash point
+   3. UNDO ->
+3. 
 
 ### Distribute recovery
 
