@@ -25,30 +25,85 @@ SQL algorithm is efficient
 
 
 
-Database technologies: Relational database systems (RDB) .
+### Database technologies:
 
-* reliable
+##### Simple le systems like UNIX le system
 
-Object Oriented (OO) Database Systems
-
-
-
-Deductive database systems (DDBS)
-
-
-
-Key-value pair based data base Systems
+* Usually very fast
+*  Can be less reliable
+* Application dependent optimisation
+* Hard to maintain (concurrency issues)
+* Lack of features { many of the features exist in RDB need to be incorporated
+  * unnecessary code development and potential increase in unreliability
 
 
 
-NoSQL (Not only SQL)
+##### Relational database systems (RDB) .
 
-* Simple design, scale
-* consistency
+* Proven technology (over 40 years)
+* Can be slow for some applications
+* Very reliable
+* Application independent optimisation
+* Well suited applications related to commerce
+* Now viable in many applications thanks to better implementations and optim-
+  isations
+* Some RDBs support OO model, e.g. Oracle, DB2
+* Widely used
 
 
 
-Cloud computing
+##### Object Oriented (OO) Database Systems
+
+* Can be slow in some applications
+* Reliable
+* Limited application independent optimisation although some newer develop-
+
+ments make them very suitable
+
+* Well suited for applications requiring complex data
+* XML based Database Systems are becoming dominant
+* Many applications now use XML documents
+* Some RDBs also support limited OO models and XML handling
+* Seldom used nowadays
+
+
+
+##### Deductive database systems (DDBS)
+
+* Generalisation of RDBs, e.g. allow recursion
+* No commercially available systems like OODBs
+* Many applications do not require the expressive power of these systems 
+
+  * e.g. commerce applications
+* Many RDBs provide some of the functionality of deductive database systems
+  * e.g. supporting transitive closure operation (SQL2)
+
+
+
+##### Key-value pair based data base Systems
+
+* Very fast, high parallel processing of large data
+* MapReduce and Hadoop are examples
+* Many applications do not require the expressive functionality of transaction
+
+processing (e.g. web search, big data analysis)
+
+* Atomic update at key-value pair level only
+
+
+
+##### NoSQL (Not only SQL)
+
+* Mechanism other than tabular relations
+* A result of Web 2.0, Facebook, Amazon needs
+* Simple design, high scalability
+* Less consistency, more availability, partition tolerance and speed
+* Allows replication
+*  Eventual consistency
+
+
+
+##### Cloud computing
 
 
 
