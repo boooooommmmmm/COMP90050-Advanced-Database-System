@@ -84,7 +84,7 @@ High priority transaction will wait pervious low priority transaction.
 
 Snapshot Isolation method is used in Oracle but it is not optimistic control and it will **not guarantee Serializability**.  However, its transaction throughput is very high compared to two phase locking scheme.  
 
-First writer can commit.
+**First writer can commit**.
 
 <br />
 
