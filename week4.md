@@ -4,7 +4,7 @@
 
 ###  ACID
 
-**Atomicity**: all or nothing. When apply for transaction, all of them are done or not at all. 
+**Atomicity**: **all or nothing**. When apply for transaction, all of them are done or not at all. 
 
 **Consistency**: the most difficult; If transaction is parallel, Preserving an Invariant. Any data written to the database must be **valid** according to all defined rules.
 
@@ -16,7 +16,7 @@ Even when several transactions are executed simultaneously, it appears to each t
 
 **Durability**: the system should **tolerate system failures** and any committed updates should not be lost. either entire block is written correctly on disk or the contexts of the block is unchanged. -> use version number and write sequentially. (Atomic disk write)
 
-The durability property ensures that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors. 
+The durability property ensures that **once a transaction has been committed, it will remain** so, even in the event of power loss, crashes, or errors. 
 
 <br />
 

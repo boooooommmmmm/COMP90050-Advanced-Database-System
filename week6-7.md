@@ -71,7 +71,7 @@ High priority transaction will wait pervious low priority transaction.
 ### Optimistic Locking
 
 * (take Slocks  briefly read the contents and release the Slocks)
-* If face, Don't take lock when read it, -> Only need to take locks when necessary (commit).
+* If fact, Don't take lock when read it, -> Only need to take locks when necessary (commit).
 * Lock as short as possible -> minimum locking
 * before commit (processing data), check value (version) at first. Then check the values read are not modified.
   * If modified  abort the transaction (release all locks) and restart the transaction
