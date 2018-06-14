@@ -1,5 +1,9 @@
 # Week5
 
+LectureSet5
+
+---
+
 ### Isolation
 
 **Guarantees consistency** ->  Isolation guarantees consistency provided each transaction itself is consistent.
@@ -92,6 +96,7 @@ The more locks you take, the poorer performance you have.  The degree of isolati
 #### Degree1:
 
 * No SLOCK for reading. Reading no need for waiting.
+* No two phase, no well formed, no lock for reading
 * Two phase for excusive lock
 * It is sensitive the following conflicts:
   * write->write;
@@ -100,16 +105,18 @@ The more locks you take, the poorer performance you have.  The degree of isolati
 
 #### Degree0:
 
-* No two phase, no lock for reading
-* Lock protocol is well-formed
+* No two phase, no well formed, no lock for reading
+* Write is well-formed, not two phase
 * When writes, lock then and immediately release. High response.
 * Ignores all conflicts.
 
 <br />
 
-<br />
+![](pic/week5_4.png)
 
 <br />
+
+![](pic/week5_5.png)
 
 <br />
 

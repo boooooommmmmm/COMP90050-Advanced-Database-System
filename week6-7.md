@@ -54,7 +54,9 @@ SIX: take shared lock at moment, has intention to take excusive lock
 
 <br />
 
+![](pic/week7_3.png)
 
+<br />
 
 ### Convoy
 
@@ -85,6 +87,10 @@ High priority transaction will wait pervious low priority transaction.
 Snapshot Isolation method is used in Oracle but it is not optimistic control and it will **not guarantee Serializability**.  However, its transaction throughput is very high compared to two phase locking scheme.  
 
 **First writer can commit**.
+
+It will **fail** when:
+
+![](pic/week7_4.PNG)
 
 <br />
 

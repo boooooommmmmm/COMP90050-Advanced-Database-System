@@ -96,19 +96,19 @@ Can rollback to particular point.
 
 divide transaction into hierarchic
 
-Commit rule: 
+**Commit rule**: 
 
 * A subtransaction can either commit or abort, however, commit cannot take place unless the parent (and patent's parents) itself commits.
 * Subtransactions have  A, C, and I properties but **not have D** property unless all its ancestors commit.
 * Commit of a sub transaction makes its results available only to its parents.
 
-Roll back Rules
+**Roll back Rules**
 
 * If a subtransaction rolls back all its children are forced to roll back.
 
-Visibility Rules
+**Visibility Rules**
 
-* Changes made by a sub transaction are visible to the parent only when the sub transaction commits. Whereas all objects of **parent are visible to its children**. Implication of this is that the parent should not modify objects while children are accessing  them. This is not a problem as parent is not run in parallel with its children.
+* Changes made by a sub transaction are visible to the parent *only when the sub transaction commits*. Whereas all objects of *parent are visible to its children*. Implication of this is that the parent should not modify objects while children are accessing  them. This is not a problem as parent is not run in parallel with its children.
 
 <br />
 
